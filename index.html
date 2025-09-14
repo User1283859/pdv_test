@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Bitte Passwort eingeben</h1>
+  <form id="loginForm">
+    <input type="password" id="password" placeholder="Passwort">
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const pw = document.getElementById('password').value;
+      const res = await fetch('/.netlify/functions/login', {
+        method: 'POST',
+        body: JSON.stringify({ password: pw }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem('token', data.token);
+        window.location.href = '/app/index.html';
+      } else {
+        alert('Falsches Passwort');
+      }
+    });
+  </script>
+</body>
+</html>

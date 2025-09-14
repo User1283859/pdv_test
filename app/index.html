@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDV-Rechner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <h1>Belastung</h1>
+    <form action="">
+      <div class="grid-container">
+        <p>0,08</p>
+        <input type="number" required id="s1" placeholder="" />
+        <p>0,16</p>
+        <input type="number" required id="s2" placeholder="" />
+        <p>0,24</p>
+        <input type="number" required id="s3" placeholder="" />
+        <p>0,32</p>
+        <input type="number" required id="s4" placeholder="" />
+        <p>0,40</p>
+        <input type="number" required id="s5" placeholder="" />
+        <p>0,45</p>
+        <input type="number" required id="s6" placeholder="" />
+        <p>0,50</p>
+        <input type="number" required id="s7" placeholder="" />
+      </div>
+      <h1 class="down">Wiederbelastung</h1>
+      <div class="grid-container">
+        <p>0,00</p>
+        <input type="number" required id="s8" placeholder="" />
+        <p>0,08</p>
+        <input type="number" required id="s9" placeholder="" />
+        <p>0,16</p>
+        <input type="number" required id="s10" placeholder="" />
+        <p>0,24</p>
+        <input type="number" required id="s11" placeholder="" />
+        <p>0,32</p>
+        <input type="number" required id="s12" placeholder="" />
+        <p>0,40</p>
+        <input type="number" required id="s13" placeholder="" />
+        <p>0,45</p>
+        <input type="number" required id="s14" placeholder="" />
+
+        <button id="submitBtn" type="submit" style="grid-column: 1 / -1">
+          Berechnen
+        </button>
+      </div>
+    </form>
+    <h1 id="result">
+      EV1= <br />
+      EV2= <br />
+      EV2/EV1=
+    </h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
