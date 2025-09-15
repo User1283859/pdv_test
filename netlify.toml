@@ -1,8 +1,0 @@
-[build]
-  publish = "."              # Statischer Root-Ordner
-  functions = "netlify/functions"
-
-[[redirects]]
-  from = "/app/*"
-  to = "/app/index.html"
-  status = 200
